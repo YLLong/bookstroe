@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>bookStore2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>registerServlet</servlet-name>
+  	<servlet-class>com.itarena.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>registerServlet</servlet-name>
+  	<url-pattern>/registerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>loginServlet</servlet-name>
+  	<servlet-class>com.itarena.servlet.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>loginServlet</servlet-name>
+  	<url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>logoutServlet</servlet-name>
+  	<servlet-class>com.itarena.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>logoutServlet</servlet-name>
+  	<url-pattern>/logoutServlet</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+  	<servlet-name>categoryServlet</servlet-name>
+  	<servlet-class>com.itarena.category.servlet.CategoryServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>categoryServlet</servlet-name>
+  	<url-pattern>/categoryServlet</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>
+  	<servlet-name>bookServlet</servlet-name>
+  	<servlet-class>com.itarena.category.servlet.BookServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>bookServlet</servlet-name>
+  	<url-pattern>/bookServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>cartServlet</servlet-name>
+  	<servlet-class>com.itarena.category.servlet.CartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>cartServlet</servlet-name>
+  	<url-pattern>/cartServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>orderServlet</servlet-name>
+  	<servlet-class>com.itarena.order.servlet.OrderServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>orderServlet</servlet-name>
+  	<url-pattern>/orderServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

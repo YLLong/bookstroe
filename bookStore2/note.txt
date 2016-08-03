@@ -1,0 +1,77 @@
+public:可以被任何类访问
+protect:当前包及其不同包的子孙类
+default:当前包
+private:私有属性，只能在当前类中使用;继承中，父类中的私有的属性、方法都没有被继承
+
+内部类:能把 new 对象和类的实现一起完成
+
+Arrays.copyOf();
+
+TimerTask;
+
+<c:forEach items="被遍历的集合" var="遍历出来的对象别名">
+	//做处理
+</c:forEach>
+
+//如果判断成立则执行 when 标签中的代码，反之执行 otherwise 中的代码
+<c:choose>
+	<c:when test="判断条件">
+		//处理
+	</c:when>
+	<c:otherwise>
+	</c:otherwise>
+</c:choose>
+
+hashmap的处理：
+	遍历所有键：
+		HashMap<String,String> mp = new　HashMap<String,String>();
+		for (String i : mp.keySet()) {
+			//String 是mp中的键的对应类型 i 是对应的KeySet中的每一个键值 　
+			System.out.println( mp.get(i));
+		}
+	遍历：
+		Map map = new HashMap();
+	　　	Iterator iter = map.entrySet().iterator();
+	　　	while (iter.hasNext()) {
+	　　		Map.Entry entry = (Map.Entry) iter.next();
+	　　		Object key = entry.getKey();
+	　　		Object val = entry.getValue();
+	　　	}
+	--------------------遍历key和value----------------------
+	for(Iterator iter = myMap.entrySet().iterator();iter.hasNext();){
+            Map.Entry element = (Map.Entry)iter.next();
+            Object strKey = element.getKey();
+            Object strObj = element.getValue();
+            System.out.println("myMap.get(\""+strKey+"\")="+strObj);
+  	}
+  	--------------------遍历整个HashMap----------------------
+  	Collection objs = myMap.entrySet();
+  	for (Iterator iterator=objs.iterator(); iterator.hasNext();){
+   		Object obj = iterator.next();
+   		System.out.println(obj);
+  	}
+  	--------------------遍历HashMap的key----------------------
+  	Collection keys = myMap.keySet();
+  	for (Iterator iterator=keys.iterator(); iterator.hasNext();){
+   		Object key = iterator.next();
+  		System.out.println(key);
+  	}
+  	--------------------遍历HashMap的value----------------------
+  	Collection values = myMap.values();
+  	for (Iterator iterator=values.iterator(); iterator.hasNext();){
+   		Object value = iterator.next();
+   		System.out.println(value);
+  	}
+
+前端页面中的输入框提示文字属性：placeholder
+
+前端时间格式化：
+	<fmt:formatDate value="（时间）" pattern="yyyy-MM-dd HH:mm"/>
+
+问题：在分类中遇到了请求每次分类后的数据都是在以前的数据上添加数据，造成了数据重复？
+解决：在数据查询中将存储数据的数组定义成了全局变量，每次调用方法，向数组中添加数据都是在上一次基础上添加的。
+	将数组变量在类中声明，在类方法中定义。
+	
+问题：在清空购物车时，我最初使用的是遍历hashmap，然后取出key；通过key来删除所有的元素。结果出现异常Caused by: java.util.ConcurrentModificationException？
+解决：在网上查阅了一下，去看API发现可以直接map.clear()来清空hashmap表元素
+	clear() 从此映射中移除所有映射关系。
